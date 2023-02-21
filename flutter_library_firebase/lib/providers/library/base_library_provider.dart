@@ -7,4 +7,10 @@ abstract class BaseLibraryProvider {
   Future<LibraryEntity?> getLibraryById(String id);
 
   Future<List<LibraryEntity>> getLibraryForCountry(String country);
+
+  Future<void> returnBook(String id, String userId);
+
+  Future<void> requestBook(String id, String userId);
+
+  Future<List<LibraryBookEntity>> lentBooksByUser(String userId);
 }

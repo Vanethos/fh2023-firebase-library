@@ -204,7 +204,7 @@ class BookWidget extends StatelessWidget {
     return Card(
       color: Colors.amber.withOpacity(0.8),
       child: ListTile(
-        leading: book.coverImage == null
+        leading: book.coverImage == null || book.coverImage!.isEmpty
             ? null
             : Image.network(
                 book.coverImage!,

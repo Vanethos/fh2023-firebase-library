@@ -56,8 +56,10 @@ GoRouter navigationRouter(
         GoRoute(
           name: routeHome,
           path: '/',
-          pageBuilder: (context, state) =>
-              const NoTransitionPage(child: HomePage()),
+          pageBuilder: (context, state) => NoTransitionPage(
+              child: HomePage(
+            authProvider: authProvider,
+          )),
           routes: <GoRoute>[
             GoRoute(
               name: routeBooks,
@@ -79,6 +81,7 @@ GoRouter navigationRouter(
                   NoTransitionPage(
                 child: LibraryPage(
                   libraryProvider: libraryProvider,
+                  authProvider: authProvider,
                 ),
               ),
               routes: <GoRoute>[

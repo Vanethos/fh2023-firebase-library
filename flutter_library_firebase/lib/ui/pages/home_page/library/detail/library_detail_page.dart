@@ -133,7 +133,7 @@ class LibraryBookWidget extends StatelessWidget {
           ? Colors.green.withOpacity(0.4)
           : Colors.red.withOpacity(0.4),
       child: ListTile(
-        leading: book.coverImage == null
+        leading: book.coverImage == null || book.coverImage!.isEmpty
             ? null
             : Image.network(
                 book.coverImage!,
@@ -141,7 +141,7 @@ class LibraryBookWidget extends StatelessWidget {
                 height: 80.0,
               ),
         title: Text(
-          book.name,
+          book.name ?? 'Undifined',
           style: Theme.of(context).textTheme.titleSmall,
         ),
         subtitle: Text(

@@ -36,4 +36,17 @@ class MockLibraryProvider extends BaseLibraryProvider {
   Future<List<LibraryEntity>> getLibraryForCountry(String country) async => [
         _mockData[country]!,
       ];
+
+  @override
+  Future<void> returnBook(String id, String userId) async {}
+
+  @override
+  Future<List<LibraryBookEntity>> lentBooksByUser(String userId) async {
+    return [
+      LibraryBookEntity(id: 'book-id-1', quantity: 1),
+    ];
+  }
+
+  @override
+  Future<void> requestBook(String id, String userId) async {}
 }
